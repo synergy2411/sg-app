@@ -9,6 +9,9 @@
     <ng-content select = ".main-class"></ng-content>
 </p>
 
+Child Control : 
+<input type="text" (keyup)="onKeyUp(childControl.value)" #childControl>
+
 <div class="container">
 <ul class="list-unstyled">
     <li class="well">

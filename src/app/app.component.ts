@@ -8,6 +8,12 @@ import { User } from './model/user';
 })
 export class AppComponent {
   title = 'app';
+  parentValue : string;
+
+  parentEvent(eventdata){
+   // alert("Data from Child " + eventdata);
+   this.parentValue = eventdata;
+  }
 
   user : User = {
       firstName : "Bill",

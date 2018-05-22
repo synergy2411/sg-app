@@ -4,5 +4,9 @@
     Welcome to {{ title }}!
   </h1>
 
-  <app-user></app-user>
+  <app-user [user]="user" [xyz]="title">
+    <header>Header Info</header>
+    <main class="main-class">Main Contents...</main>
+    <footer>Footer Info</footer>
+  </app-user>
  </div>

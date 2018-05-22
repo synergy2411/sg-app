@@ -1,5 +1,13 @@
 <div>
-<h1>User Component Loaded!!!</h1>
+<h1>{{ title }}</h1>
+
+<h2>
+    <ng-content select="header"></ng-content>
+</h2>
+
+<p>
+    <ng-content select = ".main-class"></ng-content>
+</p>
 
 <div class="container">
 <ul class="list-unstyled">
@@ -32,3 +40,8 @@
 </div>
 
 </div>
+
+
+<h2>
+    <ng-content select="footer"></ng-content>
+</h2>

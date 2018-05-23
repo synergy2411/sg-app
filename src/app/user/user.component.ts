@@ -21,9 +21,7 @@ import { User } from '../model/user';
     // }
     // `]
 })
-export class UserComponent implements OnInit, OnChanges, AfterContentInit,
-            AfterContentChecked, AfterViewInit, AfterViewChecked, DoCheck,
-            OnDestroy{
+export class UserComponent {
     @Input('xyz') title : string;
     @Input('users') users : User[];
 

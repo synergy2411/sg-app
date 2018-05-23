@@ -1,0 +1,43 @@
+<form class="form-vertical well" [formGroup]="registerForm">
+    <h2 class="text-center text-info">Register</h2>
+    <div class="form-group">
+      <label for="username">Username : </label>
+      <input type="text" name="username" 
+          class="form-control" 
+          [formControl]="username">
+          <div class="container"
+            [hidden]="username.valid || username.untouched"> 
+          Some Problem with Username field!
+          <div [hidden]="!username.hasError('required')">
+            Username is required Field!
+          </div>
+          <div [hidden]="!username.hasError('minlength')">
+            Username should be 6 characters long!
+          </div>
+        </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="password">Password : </label>
+      <input type="password" name="password" 
+          class="form-control" 
+          [formControl]="password" >
+
+          <div class="container"
+            [hidden]="password.valid || password.untouched"> 
+          Some Problem with password field!
+          <div [hidden]="!password.hasError('required')">
+            password is required Field!
+          </div>
+          <div [hidden]="!password.hasError('needExclamation')">
+            Password should contain Exclamation Sign!
+          </div>
+        </div>
+
+    </div>
+  
+    <button (click)="register()"
+        class="btn btn-danger btn-lg">
+      Register
+    </button>
+  </form>

@@ -26,6 +26,8 @@ export class HighlightDirective {
   } 
   constructor(private elementRef : ElementRef, 
             private renderer : Renderer2) { 
+              
+              this.bgColor = "aqua";
     //this.elementRef.nativeElement.style.backgroundColor = "green";
     //this.renderer.setStyle(this.elementRef.nativeElement, 
       //    'background-color', "aqua");

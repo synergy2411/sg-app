@@ -1,13 +1,25 @@
 import { Component, Input, Output, EventEmitter,
         OnInit, OnChanges, AfterContentInit, AfterContentChecked,
          AfterViewInit, AfterViewChecked, DoCheck, OnDestroy, 
-         SimpleChanges} from '@angular/core';
+         SimpleChanges,
+         ViewEncapsulation} from '@angular/core';
 import { User } from '../model/user';
 
 
 @Component({
     selector : 'app-user',
-    templateUrl : './user.component.html'
+    templateUrl : './user.component.html',
+    styleUrls: [`./user.component.css`],
+    encapsulation : ViewEncapsulation.Emulated
+    // styles : [`
+    // .dob {
+    //     border-bottom: 1px red solid;
+    // }
+    
+    // .feature{
+    //     color : blue;
+    // }
+    // `]
 })
 export class UserComponent implements OnInit, OnChanges, AfterContentInit,
             AfterContentChecked, AfterViewInit, AfterViewChecked, DoCheck,
@@ -16,6 +28,15 @@ export class UserComponent implements OnInit, OnChanges, AfterContentInit,
     @Input('users') users : User[];
 
     myNum : number = 2;
+
+    myClasses : any= {
+        'dob' : true, 
+        'feature' : false
+    }
+
+    bgColor = {
+        backgroundColor : 'red' 
+    }
 
     @Output('childEvent') childEvent = new EventEmitter<string>();
 
@@ -41,3 +62,5 @@ export class UserComponent implements OnInit, OnChanges, AfterContentInit,
     ngOnDestroy(){console.log("ngOnDestroy called!");}
    
 }
+
+// ng g d directives/highlight --spec false

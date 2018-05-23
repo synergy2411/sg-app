@@ -25,10 +25,13 @@ Child Control :
             </div>
        
             <div class="col-md-8 col-sm-8">
-                    <h1 class="text-center text-primary">
+                    <h1 appHighlight 
+                        [defaultColor]="'blue'"
+                        [newColor] = "'yellow'"
+                        class="text-center text-primary">
                         {{ user.firstName }} {{ user.lastName}}
                     </h1>
-                    <p>Date of Birth : {{ user.dob }}</p>
+                    <p [ngClass]="myClasses" [ngStyle]="bgColor">Date of Birth : {{ user.dob }}</p>
                     <p *ngIf="user.isWorking; else xyz">
                         Income : <span [innerHTML]="user.income"></span>
                     </p>

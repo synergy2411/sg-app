@@ -1,4 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter,
+        OnInit, OnChanges, AfterContentInit, AfterContentChecked,
+         AfterViewInit, AfterViewChecked, DoCheck, OnDestroy, 
+         SimpleChanges} from '@angular/core';
 import { User } from '../model/user';
 
 
@@ -6,9 +9,13 @@ import { User } from '../model/user';
     selector : 'app-user',
     templateUrl : './user.component.html'
 })
-export class UserComponent{
+export class UserComponent implements OnInit, OnChanges, AfterContentInit,
+            AfterContentChecked, AfterViewInit, AfterViewChecked, DoCheck,
+            OnDestroy{
     @Input('xyz') title : string;
-    @Input('user') user : User;
+    @Input('users') users : User[];
+
+    myNum : number = 2;
 
     @Output('childEvent') childEvent = new EventEmitter<string>();
 
@@ -20,6 +27,17 @@ export class UserComponent{
         alert(`${user.firstName} 
             is working with ${user.company}!!!`);
     }
-
+    constructor(){console.log("Constructor Called!");}
+    ngOnChanges(changes : SimpleChanges){
+        console.log("ngOnChanges called!");
+        console.log(changes);
+    }
+    ngOnInit(){console.log("ngOnInit called!"); }
+    ngDoCheck(){console.log("ngDoCheck called!");}
+    ngAfterContentInit(){console.log("ngAfterContentInit called!");}
+    ngAfterContentChecked(){console.log("ngAfterContentChecked called!");}
+    ngAfterViewInit(){console.log("ngAfterViewInit called!");}
+    ngAfterViewChecked(){console.log("ngAfterViewChecked called!");}
+    ngOnDestroy(){console.log("ngOnDestroy called!");}
    
 }

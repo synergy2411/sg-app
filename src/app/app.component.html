@@ -1,10 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <h1>
-    Welcome to {{ parentValue }}!
+    Welcome to {{ title }}!
   </h1>
 
-  <app-user [user]="user" [xyz]="title" 
+  <app-user [users]="users" [xyz]="title" 
       (childEvent)="parentEvent($event)">
     <header>Header Info</header>
     <main class="main-class">Main Contents...</main>

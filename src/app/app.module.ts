@@ -8,6 +8,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { NationalCodePipe } from './pipe/national-code.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NationalCodePipe } from './pipe/national-code.pipe';
     HighlightDirective,
     UnlessDirective,
     PipeDemoComponent,
-    NationalCodePipe
+    NationalCodePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

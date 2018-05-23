@@ -7,3 +7,17 @@
 </h1>
 
 <h2>Some Data : {{someData | async}}</h2>
+
+<input type="text" [(ngModel)]="filteredStatus">
+<hr>
+<button class="btn btn-success" (click)="addTodo()">Add New Todo</button>
+
+<ul class="list-group">
+  <li class="list-group-item" 
+    *ngFor="let todo of todos | filter : filteredStatus : 'status'">
+    {{ todo.label }}
+    <span class="badge">
+      {{ todo.status }}
+    </span>
+  </li>
+</ul>

@@ -4,6 +4,10 @@
     Welcome to {{ title }}!
   </h1>
 
+  <div class="container">
+      <app-pipe-demo></app-pipe-demo>
+  </div>
+
   <app-user [users]="users" [xyz]="title" 
       (childEvent)="parentEvent($event)">
     <header>Header Info</header>

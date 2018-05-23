@@ -1,6 +1,8 @@
 <div>
 <!-- <h1>{{ title }}</h1> -->
 
+<!-- {{ users | json }} -->
+
 <h2>
 <ng-content select="header"></ng-content>
 </h2>
@@ -29,11 +31,14 @@ Child Control :
                     [defaultColor]="'blue'"
                     [newColor] = "'yellow'"
                     class="text-center text-primary">
-                    {{ user.firstName }} {{ user.lastName}}
+                    {{ user.firstName | uppercase }} 
+                        {{ user.lastName | uppercase}}
                 </h1>
-                <p [ngClass]="myClasses" [ngStyle]="bgColor">Date of Birth : {{ user.dob }}</p>
+                <p [ngClass]="myClasses" [ngStyle]="bgColor">
+                    Date of Birth : {{ user.dob | date : 'MM/dd/yyyy' }}</p>
                 <p *ngIf="user.isWorking; else xyz">
-                    Income : <span [innerHTML]="user.income"></span>
+                    Income : 
+                    <span [innerHTML]="user.income | currency : 'INR'"></span>
                 </p>
                 
                 <!-- <ng-template [appUnless]="user.isWorking">

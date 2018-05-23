@@ -9,6 +9,7 @@ import { UnlessDirective } from './directives/unless.directive';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { NationalCodePipe } from './pipe/national-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     UnlessDirective,
     PipeDemoComponent,
     NationalCodePipe,
-    FilterPipe
+    FilterPipe,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

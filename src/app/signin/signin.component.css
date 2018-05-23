@@ -1,0 +1,12 @@
+.ng-invalid[type="text"]{
+    border-bottom : 2px red dashed;
+}
+.ng-valid[type="text"]{
+    border-bottom : 2px green dashed;
+}
+.ng-invalid[type="password"]{
+    border-bottom : 2px red dashed;
+}
+.ng-valid[type="password"]{
+    border-bottom : 2px green dashed;
+}

@@ -48,18 +48,18 @@ export class UserComponent implements OnInit, OnChanges, AfterContentInit,
         alert(`${user.firstName} 
             is working with ${user.company}!!!`);
     }
-    constructor(){console.log("Constructor Called!");}
-    ngOnChanges(changes : SimpleChanges){
-        console.log("ngOnChanges called!");
-        console.log(changes);
-    }
-    ngOnInit(){console.log("ngOnInit called!"); }
-    ngDoCheck(){console.log("ngDoCheck called!");}
-    ngAfterContentInit(){console.log("ngAfterContentInit called!");}
-    ngAfterContentChecked(){console.log("ngAfterContentChecked called!");}
-    ngAfterViewInit(){console.log("ngAfterViewInit called!");}
-    ngAfterViewChecked(){console.log("ngAfterViewChecked called!");}
-    ngOnDestroy(){console.log("ngOnDestroy called!");}
+    // constructor(){console.log("Constructor Called!");}
+    // ngOnChanges(changes : SimpleChanges){
+    //     console.log("ngOnChanges called!");
+    //     console.log(changes);
+    // }
+    // ngOnInit(){console.log("ngOnInit called!"); }
+    // ngDoCheck(){console.log("ngDoCheck called!");}
+    // ngAfterContentInit(){console.log("ngAfterContentInit called!");}
+    // ngAfterContentChecked(){console.log("ngAfterContentChecked called!");}
+    // ngAfterViewInit(){console.log("ngAfterViewInit called!");}
+    // ngAfterViewChecked(){console.log("ngAfterViewChecked called!");}
+    // ngOnDestroy(){console.log("ngOnDestroy called!");}
    
 }
 

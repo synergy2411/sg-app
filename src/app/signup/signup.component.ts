@@ -3,11 +3,13 @@ import { FormControl,
   FormGroup, 
   FormBuilder, 
   Validators } from '@angular/forms';
+import { UserService } from '../services/user-service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  providers : [ UserService ]
 })
 export class SignupComponent implements OnInit {
 
@@ -26,11 +28,15 @@ export class SignupComponent implements OnInit {
   }
 
   registerForm : FormGroup;
-  constructor(private fb : FormBuilder) { 
+  constructor(private fb : FormBuilder, 
+          public userService : UserService) { 
     this.registerForm = this.fb.group({
       username : this.username,
       password : this.password
     })
+  }
+  decrease(){
+    this.userService.counter--;
   }
   register(){
     console.log(this.registerForm);

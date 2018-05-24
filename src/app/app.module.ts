@@ -15,6 +15,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserService } from './services/user-service';
+import { ObservaleDemoComponent } from './observale-demo/observale-demo.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserService } from './services/user-service';
     NationalCodePipe,
     FilterPipe,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ObservaleDemoComponent
   ],
   imports: [
     BrowserModule,

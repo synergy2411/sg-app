@@ -9,7 +9,7 @@ import { UserService } from '../services/user-service';
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
-  providers : [ UserService ]
+  //providers : [ UserService ]
 })
 export class SignupComponent implements OnInit {
 
@@ -40,6 +40,8 @@ export class SignupComponent implements OnInit {
   }
   register(){
     console.log(this.registerForm);
+    this.userService.register(this.registerForm.value.username,
+                      this.registerForm.value.password);
   }
 
   ngOnInit() {

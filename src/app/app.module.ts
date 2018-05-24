@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -18,6 +19,8 @@ import { UserService } from './services/user-service';
 import { ObservaleDemoComponent } from './observale-demo/observale-demo.component';
 import { AuthInterceptor } from './services/auth-interceptor';
 import { LoggerInterceptor } from './services/logger-interceptor';
+import { APP_ROUTES } from './app.routing';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { LoggerInterceptor } from './services/logger-interceptor';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [ UserService, {
     provide : HTTP_INTERCEPTORS,

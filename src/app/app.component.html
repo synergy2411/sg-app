@@ -1,7 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <app-observale-demo></app-observale-demo>
 
+<div class="container">
+  <ul class="list-unstyled nav navbar-nav navbar-default">
+    <li> <a [routerLink]="['pipe']">Home</a></li>
+    <li> <a [routerLink]="['obsdemo']">Observable demo</a></li>
+    <li *ngIf="!userService.isAuthenticated()"> 
+      <a [routerLink]="['login']">Login</a></li>  
+    <li> 
+      <a [routerLink]="['signup']">Register</a></li>
+      <li *ngIf="userService.isAuthenticated()">
+        <a (click)="signout()">Logout</a></li>
+  </ul>
+</div>
+
+<div>
+  <!-- <app-observale-demo></app-observale-demo> -->
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 
   <h1>
     Counter Value in App : {{userService.counter}}
@@ -11,15 +28,15 @@
   <button (click)="increase()">Increase</button>
 
   <div class="container">
-    <app-signup></app-signup>
+    <!-- <app-signup></app-signup> -->
   </div>
 
   <div class="container">
-    <app-signin></app-signin>
+    <!-- <app-signin></app-signin> -->
   </div>
 
   <div class="container">
-      <app-pipe-demo></app-pipe-demo>
+      <!-- <app-pipe-demo></app-pipe-demo> -->
   </div>
 
   <app-user [users]="users" [xyz]="title" 

@@ -13,6 +13,7 @@ export class SigninComponent implements OnInit {
     //alert("Form Submitted!");
     console.log(form.value.username, form.value.password);
     this.userService.login(form.value.username, form.value.password);
+    form.resetForm();
   }
   constructor(private userService : UserService) { }
 
@@ -20,6 +21,9 @@ export class SigninComponent implements OnInit {
     this.userService.getApiData();
   }
 
+  postData(){
+    this.userService.postData();
+  }
   ngOnInit() {
   }
 

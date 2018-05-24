@@ -4,6 +4,7 @@ import { UserService } from  './services/user-service';
 import * as firebase from 'firebase';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LoggerInterceptor } from './services/logger-interceptor';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,17 +14,18 @@ import { LoggerInterceptor } from './services/logger-interceptor';
 export class AppComponent implements OnInit {
   title = 'app';
   parentValue : string;
+  users : User[]; 
 
   constructor(public userService : UserService){}
+  
   signout(){
     this.userService.signOut();
   }
+
   parentEvent(eventdata){
-   // alert("Data from Child " + eventdata);
    this.parentValue = eventdata;
   }
-
-  users : User[]; 
+  
   ngOnInit(){
     firebase.initializeApp({
       apiKey: "AIzaSyAf_O4-g444bfGKAW7epcUaqIHhoW5a_Uo",
@@ -32,8 +34,6 @@ export class AppComponent implements OnInit {
     //this.users = this.userService.getUserData();
     this.userService.getUserData()
       .subscribe((users)=>this.users = users);
-   
-      
   }
 
   increase(){

@@ -1,0 +1,16 @@
+<h1>Employee Component Loaded!!</h1>
+
+<ul>
+  <li><a [routerLink]="['personal', 5, 'Foo']">Personal Details</a></li>
+  <li><a [routerLink]="['professional']">Professional Details</a></li>
+</ul>
+
+<router-outlet></router-outlet>
+<!-- 
+Some Code :: {{ someCode }}
+
+Paragraph Binding : <p [innerHTML]="someCode"></p> -->
+
+
+<a [href]="someUrl">Danger</a>
+<a [href]="safeUrl">Safe</a>

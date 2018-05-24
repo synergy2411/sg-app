@@ -20,6 +20,10 @@ import { ObservaleDemoComponent } from './observale-demo/observale-demo.componen
 import { AuthInterceptor } from './services/auth-interceptor';
 import { LoggerInterceptor } from './services/logger-interceptor';
 import { APP_ROUTES } from './app.routing';
+import { LoginGaurdService } from './services/login-gaurd-service';
+import { EmployeeComponent } from './employee/employee.component';
+import { PersonlComponent } from './employee/personl/personl.component';
+import { ProfessionalComponent } from './employee/professional/professional.component';
 
 
 @NgModule({
@@ -33,7 +37,10 @@ import { APP_ROUTES } from './app.routing';
     FilterPipe,
     SigninComponent,
     SignupComponent,
-    ObservaleDemoComponent
+    ObservaleDemoComponent,
+    EmployeeComponent,
+    PersonlComponent,
+    ProfessionalComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,8 @@ import { APP_ROUTES } from './app.routing';
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
-  providers: [ UserService, {
+  providers: [ UserService, LoginGaurdService, 
+    {
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,
     multi : true

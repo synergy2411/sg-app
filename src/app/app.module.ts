@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -16,6 +16,8 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserService } from './services/user-service';
 import { ObservaleDemoComponent } from './observale-demo/observale-demo.component';
+import { AuthInterceptor } from './services/auth-interceptor';
+import { LoggerInterceptor } from './services/logger-interceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,15 @@ import { ObservaleDemoComponent } from './observale-demo/observale-demo.componen
     HttpModule,
     HttpClientModule
   ],
-  providers: [ UserService ],
+  providers: [ UserService, {
+    provide : HTTP_INTERCEPTORS,
+    useClass : AuthInterceptor,
+    multi : true
+  },{
+    provide : HTTP_INTERCEPTORS,
+    useClass : LoggerInterceptor,
+    multi : true
+  } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

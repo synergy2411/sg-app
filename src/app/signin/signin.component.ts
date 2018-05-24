@@ -16,6 +16,10 @@ export class SigninComponent implements OnInit {
   }
   constructor(private userService : UserService) { }
 
+  getData(){
+    this.userService.getApiData();
+  }
+
   ngOnInit() {
   }
 

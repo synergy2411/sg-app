@@ -10,9 +10,14 @@ import 'rxjs/Rx';
 export class ObservaleDemoComponent implements OnInit {
   num : number;
   data : any;
-  
+  unsubInterval : any;
+
+  unsub(){
+    this.unsubInterval.unsubscribe();
+  }
+
   constructor() { 
-    Observable.interval(1000)
+    this.unsubInterval = Observable.interval(1000)
     .subscribe((num)=>this.num = num);
     console.log(this.num);
 

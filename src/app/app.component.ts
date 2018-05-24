@@ -27,7 +27,8 @@ export class AppComponent implements OnInit {
     //this.users = this.userService.getUserData();
     this.userService.getUserData()
       .subscribe((users)=>this.users = users);
-    this.userService.getApiData();
+   
+      
   }
 
   increase(){
